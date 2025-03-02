@@ -1,0 +1,47 @@
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		          //↓ value값이 스트링형태
+		ArrayList<String> a = new ArrayList<String>();
+		//추가하는 방법
+		String name = "kim";
+		a.add(name);
+		System.out.println("사이즈 : "+a.size());
+		a.add(name);
+		System.out.println("사이즈 : "+a.size());
+		// a > 0    1
+		//    kim  kim
+		String n = "lee";
+		a.add(n);
+		// a > 0    1    2
+		//    kim  kim  lee
+		System.out.println("사이즈 : "+a.size());
+		//순서있고 전체출력
+		for (int i=0; i<a.size(); i++) {
+			System.out.println(i+"인덱스 값 : "+a.get(i));
+		//순서있고 전체출력 > 확장된 for로 작성
+		for (String s : a) {
+			System.out.println("값 : "+s);
+		}
+		a.remove(1); //1번 인덱스를 삭제하겠다.
+		System.out.println(a.size());
+		}
+		//순서있고 전체출력
+		for(int i=0; i<a.size(); i++) {
+			System.out.println(i+"인덱스값:"+a.get(i));
+		}
+		//삽입
+		a.add(0,"park"); // 0번인덱스에 삽입한다.
+		System.out.println(a.size());
+		//순서있고 전체출력
+		for(int i=0; i<a.size(); i++) {
+			System.out.println(i+"인덱스값:"+a.get(i));
+		}
+		//수정
+		a.set(1, "kkk"); // 1번인덱스에 삽입한다.
+		System.out.println(a.size());
+		//순서있고 전체출력
+		for(int i=0; i<a.size(); i++) {
+			System.out.println(i+"인덱스값:"+a.get(i));
+		}
+	}
+}
