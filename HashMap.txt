@@ -1,0 +1,46 @@
+package classNote;
+
+import java.util.HashMap;
+
+public class HashMapTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HashMap<String,Integer> cafe = new HashMap<>();
+		// Integer = 메뉴안에 있는 각각의 엘리멘트들을 갖고놀고싶을때 사용
+		cafe.put("아메리카노", 2000);
+		cafe.put("카페라떼", 4000);
+		cafe.put("사과주스", 6000);
+		System.out.println(cafe); // 메뉴 전체출력
+		System.out.println(cafe.get("아메리카노")); // key값 아메리카노 value값 출력
+		System.out.println(cafe.get("카페라떼"));
+		System.out.println(cafe.get("사과주스"));
+		
+		// put (key,value)로는 value 값을 변환시킬수 있다
+		cafe.put("아메리카노", 8000); // <-- key 아메리카노의 value를 8000으로 변경
+		System.out.println(cafe.get("아메리카노")); // key값 아메리카노 value값 출력
+		System.out.println(cafe.get("카페라떼"));
+		System.out.println(cafe.get("사과주스"));
+		
+		// ke값으로 boolean 타입 if문으로 찾는법
+		cafe.containsKey("아메리카노"); // cafe안에 아메리카노가 포함(containsKey)되어있는지 boolean 타입으로 나옴
+		if (cafe.containsKey("아메리카노")) {
+			System.out.println("아메리카노 줘"); //key 값이 있을경우 if문 실행
+		}
+		if(cafe.containsKey("콜드브루")) {
+			System.out.println("콜드브루 줘"); // key에 콜드브루는 없음으로 동작중지
+		}
+		// Value값으로 boolean 타입 if문으로 찾는법
+		if(cafe.containsValue(2000)) {
+			System.out.println("2000원짜리 줘"); // value에 2000이 있음으로 실행
+		}
+		if(cafe.containsValue(2500)) {
+			System.out.println("2500원짜리 줘"); // value에 2500이 없음으로 중단
+		}
+		// key 삭제하는 방법
+		cafe.remove("아메리카노"); // cafe안에 아메리카노 key 삭제
+		//전체 모든 세트를 입력하는것
+		//Set cafeMenu=cafe.entrySet(); 
+	}
+
+}

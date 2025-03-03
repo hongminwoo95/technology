@@ -1,0 +1,49 @@
+package classNote;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Interator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList <Integer> a = new ArrayList<>();
+		ArrayList <String> b = new ArrayList<>();
+		a.add(10);
+		a.add(1);
+		a.add(7);
+		b.add("a");
+		b.add("b");
+		b.add("c");
+		// 값출력 
+		//for (int k : a) {System.out.println(k);}; 
+		//for (String q : b) {System.out.println(q);} 
+		//i.hasNext(); // 다음의 값이 있는지 없는지 boolean 타입으로 보여줌
+		//i.next(); //i에 값들을 보여줌 Object인 이유는 여러 자료형이 들어올수 있기떄문에
+		
+		//Iterator = 집합을 건드리지 않고 값을 뽑아낼때
+		// 임폴트 해줘야함
+		Iterator i = a.iterator(); // Iterator자료형을 a배열을 참조하여 i변수에 넣어라
+		Iterator i2 = b.iterator();// 임폴트 해줘야함
+		while(i.hasNext()) {  // hasNet는 다음값이 있으면 true 없으면 false
+			System.out.println(i.next()); //다음값 출력 10
+			i.remove(); // 10삭제
+		}
+		System.out.println("------");
+		while(i.hasNext()) {  //위에 i.remove가 다음값을 삭제했기때문에 
+			System.out.println(i.next()); //다음값 출력시 값이 안나옴
+		}
+		while(i2.hasNext()) {  // hasNet는 다음값이 있으면 true 없으면 false
+			System.out.println(i2.next()); //다음값 출력 10
+			i2.remove(); // 10삭제
+		}
+		System.out.println("------");
+		while(i2.hasNext()) {  //위에 i.remove가 다음값을 삭제했기때문에 
+			System.out.println(i2.next()); //다음값 출력시 값이 안나옴
+		}
+		
+
+		
+	}
+
+}
